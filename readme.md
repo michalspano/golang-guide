@@ -10,6 +10,11 @@ $ go run src.go
 $ go build src.go
 ```
 
+### Execute binary
+```bash
+$ ./src
+```
+
 ## Binary to `/bin`
 ```bash
 $ go install src.go
