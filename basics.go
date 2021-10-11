@@ -18,6 +18,12 @@ func main() {
 	// Standard output
 	fmt.Println("Hello, World!")
 
+	// User input in GO
+	var name string
+	fmt.Print("Enter you name: ")
+	fmt.Scanln(&name)
+	fmt.Println("Your name is: ", name)
+
 	// Variables
 	x := 5
 	y := 7
