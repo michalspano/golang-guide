@@ -1,0 +1,8 @@
+This is a sample text file.
+Meant to be read.
+a
+b
+c
+d
+e
+f
