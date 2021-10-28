@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "name": "Mike",
+      "type": "Programmer",
+      "age": 18,
+      "social": {
+        "facebook": "https://facebook.com/xyz",
+        "twitter": "https://twitter.com/xyz"
+      }
+    },
+    {
+      "name": "Daniel",
+      "type": "Author",
+      "age": 18,
+      "social": {
+        "facebook": "https://facebook.com/foo",
+        "twitter": "https://twitter.com/foo"
+      }
+    },
+    {
+      "name": "Steven",
+      "type": "Engineer",
+      "age": 20,
+      "social": {
+        "facebook": "bar",
+        "twitter": "baz"
+      }
+    }
+  ]
+}
