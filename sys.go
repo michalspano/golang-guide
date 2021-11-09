@@ -6,9 +6,21 @@ import (
 )
 
 // Create a global variable of type string
-var outPath string = "out/sys.txt"
+var outPath = "out/sys.txt"
+var dotFiles = false
 
 func main() {
+	// Receive command-line arguments and enumerate them
+	args := os.Args[1:]
+
+	// Update dotFiles to true if the argument is "-d" else false with
+	// proper number of command-line arguments
+	if len(args) != 0 {
+		// Understand `-d`flag -> ignore .dot files
+		if args[0] == "-d" {
+            dotFiles = true
+        }
+	}
 
 	// Assign current path to a variable
 	path, err := os.Getwd()
@@ -25,13 +37,14 @@ func main() {
     }
 
 	// Call printPath function
-	printFiles(path)
+	printFiles(path, dotFiles)
 }
 
 // Print files in path's directory
 // Decide whether the file is a directory or a regular file
 // recursively call printFiles() to print files in subdirectories
-func printFiles(path string) {
+// ignore files starting with . if dotIgnore is set to true
+func printFiles(path string, dotIgnore bool) {
 	// Open the path's directory and handle error
     dir, err := os.Open(path)
     if err != nil {
@@ -55,13 +68,19 @@ func printFiles(path string) {
     // Loop through the files
     for _, file := range files {
 
+		// Ignore files starting with . if dotIgnore is set to true
+		if dotIgnore && file.Name()[0] == '.' {
+			fmt.Println("Ignored file/dir:", file.Name())
+			continue
+		}
+
         // Print the file's name to the console
         fmt.Println(file.Name())
 		writeFile(outPath, file.Name() + "\n")
 
         // If the file is a directory, call printFiles()
         if file.IsDir() {
-            printFiles(path + "/" + file.Name())
+            printFiles(path + "/" + file.Name(), dotFiles)
 			writeFile(path + "/" + file.Name(), "\n")
         }
     }
