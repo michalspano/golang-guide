@@ -1,0 +1,3 @@
+Current version of main.go to scan TODOs only supports default scanner,
+that is, it can only detect 'TODOs' in the parent directory. Further
+improvements will be added or visit: https://github.com/michalspano/white-noise/blob/main/src/wnoise.go that uses a recursive function to scan subdirectories.
