@@ -1,6 +1,8 @@
 ### Golang Guide
 ___
 
+#### TODO: redefine and finalize the repo's `readme.md`.
+
 This project is a simple guide for golang. It is not a complete guide, but it is a good starting point. It contains some basic information about golang, and some tips and tricks for getting started, moreover, a collection of some projects that I have created for a beginner to try, and see how they work. All the source code is available on under the `src` folder.
 
 - [GO doc](https://go.dev/doc/)
@@ -31,3 +33,4 @@ $ ./src
 ```sh
 $ go install src.go
 ```
+
